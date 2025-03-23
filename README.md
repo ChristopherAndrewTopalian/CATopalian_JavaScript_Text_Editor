@@ -1,5 +1,5 @@
 # CATopalian JavaScript Text Editor
-A JavaScript Text Editor that has many word processessinge features.  
+A JavaScript Text Editor that has many word processessing features.  
 
 USE APP: https://christopherandrewtopalian.github.io/CATopalian_JavaScript_Text_Editor/CATopalian_JavaScript_Text_Editor.html  
 
