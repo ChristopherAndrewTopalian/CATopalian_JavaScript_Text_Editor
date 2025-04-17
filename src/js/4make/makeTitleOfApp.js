@@ -4,8 +4,8 @@ function makeTitleOfApp()
 {
     let mainDiv = ce('div');
     mainDiv.style.position = 'absolute';
-    mainDiv.style.right = '20px';
-    mainDiv.style.top = '2px';
+    mainDiv.style.right = '15px';
+    mainDiv.style.bottom = '15px';
     mainDiv.style.zIndex = 1;
     ba(mainDiv);
 

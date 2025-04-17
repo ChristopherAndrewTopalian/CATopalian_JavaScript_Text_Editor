@@ -54,14 +54,29 @@ function makeInterface()
 
     //-//
 
+    let fontFamilyInput = ce('input');
+    fontFamilyInput.type = 'text';
+    fontFamilyInput.id = 'fontFamilyInput';
+    fontFamilyInput.value = 'Arial';
+    textInfoContainer.append(fontFamilyInput);
+
+    //-//
+
+    let setFontButton = ce('button');
+    setFontButton.textContent = 'Set Font';
+    setFontButton.onclick = function()
+    {
+        restoreSelection();
+        document.execCommand('fontName', false, fontFamilyInput.value);
+    };
+    textInfoContainer.append(setFontButton);
+
+    //-//
+
     let nameOfFileInput = ce('input');
     nameOfFileInput.type = 'text';
     nameOfFileInput.id = 'nameOfFileInput';
     nameOfFileInput.value = 'ourTextFile';
-    nameOfFileInput.oninput = function()
-    {
-
-    };
     mainDiv.append(nameOfFileInput);
 
     //-//
@@ -142,22 +157,29 @@ function makeInterface()
 
     //-//
 
-    let theTextbox = document.createElement('div');
+    let theTextbox = ce('div');
     theTextbox.id = 'theTextbox';
     theTextbox.contentEditable = true;
-    theTextbox.style.border = '1px solid cyan';
+    theTextbox.style.border = 'solid 1px cyan';
     theTextbox.style.borderRadius = '8px';
     theTextbox.style.padding = '10px';
-    theTextbox.style.minHeight = '100px';
+    theTextbox.style.minHeight = '300px';
     theTextbox.style.backgroundColor = 'black';
     theTextbox.style.color = 'white';
     theTextbox.style.outline = 'none';
-
+    theTextbox.style.overFlowY = 'scroll';
+    theTextbox.style.fontFamily = fontFamilyInput.value;
     theTextbox.onkeyup = function()
     {
         ge('characterCountText').textContent = getCharCount(theTextbox.id) + ' chars';
         ge('wordCountText').textContent = getWordCount(theTextbox.id) + ' words';
+
+        // for fontFamily selected word
+        saveSelection();
     };
+
+    // for fontFamily selected word
+    theTextbox.onmouseup = saveSelection;
 
     mainDiv.append(theTextbox);
 }
