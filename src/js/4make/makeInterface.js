@@ -44,6 +44,16 @@ function makeInterface()
 
     //-//
 
+    let italicButton = ce('button');
+    italicButton.textContent = 'Italic';
+    italicButton.onclick = function()
+    {
+        document.execCommand('italic');
+    };
+    textInfoContainer.append(italicButton);
+
+    //-//
+
     let nameOfFileInput = ce('input');
     nameOfFileInput.type = 'text';
     nameOfFileInput.id = 'nameOfFileInput';
