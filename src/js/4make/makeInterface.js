@@ -34,6 +34,16 @@ function makeInterface()
 
     //-//
 
+    let boldButton = ce('button');
+    boldButton.textContent = 'Bold';
+    boldButton.onclick = function()
+    {
+        document.execCommand('bold');
+    };
+    textInfoContainer.append(boldButton);
+
+    //-//
+
     let nameOfFileInput = ce('input');
     nameOfFileInput.type = 'text';
     nameOfFileInput.id = 'nameOfFileInput';
@@ -122,15 +132,23 @@ function makeInterface()
 
     //-//
 
-    let theTextbox = ce('textarea');
+    let theTextbox = document.createElement('div');
     theTextbox.id = 'theTextbox';
+    theTextbox.contentEditable = true;
+    theTextbox.style.border = '1px solid cyan';
     theTextbox.style.borderRadius = '8px';
+    theTextbox.style.padding = '10px';
+    theTextbox.style.minHeight = '100px';
+    theTextbox.style.backgroundColor = 'black';
+    theTextbox.style.color = 'white';
+    theTextbox.style.outline = 'none';
+
     theTextbox.onkeyup = function()
     {
         ge('characterCountText').textContent = getCharCount(theTextbox.id) + ' chars';
-
         ge('wordCountText').textContent = getWordCount(theTextbox.id) + ' words';
     };
+
     mainDiv.append(theTextbox);
 }
 

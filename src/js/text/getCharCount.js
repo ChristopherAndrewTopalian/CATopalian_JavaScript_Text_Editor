@@ -2,7 +2,7 @@
 
 function getCharCount(whichElement)
 {
-    let data = ge(whichElement).value;
+    let data = ge(whichElement).textContent;
 
     // remove newline characters and spaces from the count
     let cleanedData = data.replace(/\n/g, '').replace(/\s/g, '');

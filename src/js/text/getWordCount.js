@@ -2,7 +2,7 @@
 
 function getWordCount(whichElement)
 {
-    let data = ge(whichElement).value;
+    let data = ge(whichElement).textContent;
 
     // remove any leading or trailing whitespace and split the data into words
     let wordsArray = data.trim().split(/\s+/);
