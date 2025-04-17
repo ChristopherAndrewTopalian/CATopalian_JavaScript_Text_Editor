@@ -50,6 +50,7 @@ function makeInterface()
         {
             ge('theTextbox').value = '';
             ge('characterCountText').textContent = '0 chars';
+
             ge('wordCountText').textContent = '0 words';
         }
     };

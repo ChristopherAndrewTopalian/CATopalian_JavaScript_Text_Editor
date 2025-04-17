@@ -2,7 +2,6 @@
 
 function makeTitleOfApp()
 {
-    // mainDiv
     let mainDiv = ce('div');
     mainDiv.style.position = 'absolute';
     mainDiv.style.right = '20px';
@@ -12,7 +11,6 @@ function makeTitleOfApp()
 
     //-//
 
-    // titleOfApp
     let titleOfApp = ce('a');
     titleOfApp.id = 'titleOfApp';
     titleOfApp.textContent = 'CATopalian JavaScript Text Editor';
@@ -25,7 +23,7 @@ function makeTitleOfApp()
     mainDiv.append(titleOfApp);
 }
 
-//--//
+//----//
 
 // Dedicated to God the Father
 // All Rights Reserved Christopher Andrew Topalian Copyright 2000-2025
