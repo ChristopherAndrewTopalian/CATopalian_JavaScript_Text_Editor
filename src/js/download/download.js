@@ -20,7 +20,7 @@ function download(whichElement)
     // this allows it to downloaded (accessed)
     ourElement.href = window.URL.createObjectURL(theType);
 
-    ourElement.download = 'filename.txt';
+    ourElement.download = ge('nameOfFileInput').value + '.txt'; //'filename.txt';
 
     ourElement.click();
 }

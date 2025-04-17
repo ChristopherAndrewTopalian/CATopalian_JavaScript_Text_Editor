@@ -34,6 +34,23 @@ function makeInterface()
 
     //-//
 
+    let nameOfFileInput = ce('input');
+    nameOfFileInput.type = 'text';
+    nameOfFileInput.id = 'nameOfFileInput';
+    nameOfFileInput.value = 'ourTextFile';
+    nameOfFileInput.style.backgroundColor = 'rgb(0, 0, 0)';
+    nameOfFileInput.style.color = 'rgb(255, 255, 255)';
+    nameOfFileInput.style.borderRadius = '8px';
+    nameOfFileInput.style.paddingLeft = '8px';
+    nameOfFileInput.style.paddingRight = '8px';
+    nameOfFileInput.oninput = function()
+    {
+
+    };
+    mainDiv.append(nameOfFileInput);
+
+    //-//
+
     let newTextFileButton = ce('button');
     newTextFileButton.textContent = 'New';
     newTextFileButton.onmouseover = function()
@@ -122,7 +139,7 @@ function makeInterface()
     mainDiv.append(theTextbox);
 }
 
-//--//
+//----//
 
 // Dedicated to God the Father
 // All Rights Reserved Christopher Andrew Topalian Copyright 2000-2025
