@@ -95,7 +95,7 @@ function makeInterface()
 
         if (askFirst == true)
         {
-            ge('theTextbox').value = '';
+            ge('theTextbox').innerHTML = '';
             ge('characterCountText').textContent = '0 chars';
 
             ge('wordCountText').textContent = '0 words';
