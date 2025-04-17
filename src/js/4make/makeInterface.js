@@ -38,11 +38,6 @@ function makeInterface()
     nameOfFileInput.type = 'text';
     nameOfFileInput.id = 'nameOfFileInput';
     nameOfFileInput.value = 'ourTextFile';
-    nameOfFileInput.style.backgroundColor = 'rgb(0, 0, 0)';
-    nameOfFileInput.style.color = 'rgb(255, 255, 255)';
-    nameOfFileInput.style.borderRadius = '8px';
-    nameOfFileInput.style.paddingLeft = '8px';
-    nameOfFileInput.style.paddingRight = '8px';
     nameOfFileInput.oninput = function()
     {
 

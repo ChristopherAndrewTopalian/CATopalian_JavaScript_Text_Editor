@@ -53,6 +53,15 @@ button:active
     color: rgb(255, 0, 255);
 }
 
+input
+{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 input:hover
 {
     cursor: pointer;

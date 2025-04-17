@@ -36,13 +36,13 @@ function hoverSound()
 {
     playTone(
         300,     // frequency
-        500,     // duration
+        200,     // duration
         'sine',  // waveType
-        0.3,      // volume
-        50,       // detune
-        0.2,      // attackTime
-        0.2,      // releaseTime
-        -0.5      // panValue -0.5 is left
+        0.04,      // volume
+        0,       // detune
+        0.1,      // attackTime
+        0.05,      // releaseTime
+        0.0      // panValue -0.5 is left
     );
 }
 
