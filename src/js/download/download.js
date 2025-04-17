@@ -1,6 +1,30 @@
 // download.js
 
-function download(whichElement) 
+function download(whichElement)
+{
+    // get html content (not plain text)
+    let data = ge(whichElement).innerHTML;
+
+    // create an anchor element
+    let ourElement = ce("a");
+
+    // use html mime type
+    let theType = new Blob([data],
+    {
+        type: "text/html"
+    });
+
+    // create temp url and assign to href
+    ourElement.href = window.URL.createObjectURL(theType);
+
+    // use .html extension to preserve formatting
+    ourElement.download = ge('nameOfFileInput').value + '.html';
+
+    // trigger download
+    ourElement.click();
+}
+
+function downloadTxt(whichElement) 
 {
     // get data from specified Text Area
     let data = ge(whichElement).value;
