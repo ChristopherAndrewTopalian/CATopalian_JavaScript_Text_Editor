@@ -181,11 +181,12 @@ function makeInterface()
     theTextbox.style.backgroundColor = 'black';
     theTextbox.style.color = 'white';
     theTextbox.style.outline = 'none';
-    theTextbox.style.overFlowY = 'scroll';
+    theTextbox.style.overFlow = 'scroll';
     theTextbox.style.fontFamily = fontFamilyInput.value;
     theTextbox.onkeyup = function()
     {
         ge('characterCountText').textContent = getCharCount(theTextbox.id) + ' chars';
+
         ge('wordCountText').textContent = getWordCount(theTextbox.id) + ' words';
 
         // for fontFamily selected word
