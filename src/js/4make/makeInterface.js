@@ -125,6 +125,7 @@ function makeInterface()
     // only accept .txt files
     openButton.accept = '.txt, .html, .js, .py, .css, .c, .cpp, .rb, .bat, .md';
     // handle file selection
+    openButton.style.display = 'none';
     openButton.onchange = function(event)
     {
         // get the selected file
@@ -138,7 +139,7 @@ function makeInterface()
             reader.onload = function(e)
             {
                 // set file content to the textarea
-                theTextbox.value = e.target.result;
+                theTextbox.textContent = e.target.result;
 
                 ge('characterCountText').textContent = getCharCount('theTextbox') + ' chars';
 
@@ -150,6 +151,18 @@ function makeInterface()
         }
     };
     mainDiv.append(openButton);
+
+    //-//
+
+    //-//
+
+    let openFileBtn = ce('button');
+    openFileBtn.textContent = 'Open';
+    openFileBtn.onclick = function()
+    {
+        openButton.click();
+    };
+    mainDiv.append(openFileBtn);
 
     //-//
 
