@@ -155,8 +155,6 @@ function makeInterface()
 
     //-//
 
-    //-//
-
     let openFileBtn = ce('button');
     openFileBtn.textContent = 'Open';
     openFileBtn.onclick = function()
