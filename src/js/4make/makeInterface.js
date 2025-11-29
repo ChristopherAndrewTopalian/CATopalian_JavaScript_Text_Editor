@@ -35,7 +35,7 @@ function makeInterface()
     //-//
 
     let boldButton = ce('button');
-    boldButton.textContent = 'Bold';
+    boldButton.textContent = 'B';
     boldButton.onclick = function()
     {
         document.execCommand('bold');
@@ -45,7 +45,8 @@ function makeInterface()
     //-//
 
     let italicButton = ce('button');
-    italicButton.textContent = 'Italic';
+    italicButton.style.fontFamily = 'georgia';
+    italicButton.textContent = 'I';
     italicButton.onclick = function()
     {
         document.execCommand('italic');
