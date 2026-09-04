@@ -204,6 +204,8 @@ function makeInterface()
 
                 ge('characterCountText').textContent = getCharCount('theTextbox') + ' chars';
 
+                ge('charCountWithSpacesText').textContent = getCharCountWithSpaces('theTextbox') + ' chars';
+
                 ge('wordCountText').textContent = getWordCount('theTextbox') + ' words';
             };
 
