@@ -93,6 +93,7 @@ function makeInterface()
     fontDropdown.style.backgroundColor = 'rgb(0, 0, 0)';
     fontDropdown.style.color = 'rgb(255, 255, 255)';
     fontDropdown.style.height = '20px';
+    fontDropdown.style.marginTop = '7px';
     
     // Add your font options
     let fonts = ['Arial', 'Georgia', 'Impact', 'Courier New', 'Times New Roman'];
