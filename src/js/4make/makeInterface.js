@@ -78,8 +78,8 @@ function makeInterface()
     setFontButton.textContent = 'Set Font';
     setFontButton.onclick = function()
     {
-        restoreSelection();
-        document.execCommand('fontName', false, fontFamilyInput.value);
+        // instantly changes the font for the entire editor
+        ge('theTextbox').style.fontFamily = fontFamilyInput.value;
     };
     textInfoContainer.append(setFontButton);
 
