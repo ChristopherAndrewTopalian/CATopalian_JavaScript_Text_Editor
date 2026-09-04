@@ -2,15 +2,19 @@
 
 function getWordCount(whichElement)
 {
-    let data = ge(whichElement).textContent;
+    // Use innerText to properly capture visual line breaks as \n
+    let data = ge(whichElement).innerText;
 
-    // remove any leading or trailing whitespace and split the data into words
+    // Safety check: if the box is empty, return 0
+    if (data.trim() === '') 
+    {
+        return 0;
+    }
+
+    // Split by any whitespace (spaces, tabs, newlines)
     let wordsArray = data.trim().split(/\s+/);
 
-    // count the number of words in the array
-    let wordCount = wordsArray.length;
-
-    return wordCount;
+    return wordsArray.length;
 }
 
 //--//
