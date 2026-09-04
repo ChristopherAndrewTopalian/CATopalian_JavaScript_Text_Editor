@@ -66,10 +66,12 @@ function makeInterface()
 
     //-//
 
+    /*
     let fontFamilyInput = ce('input');
     fontFamilyInput.type = 'text';
     fontFamilyInput.id = 'fontFamilyInput';
     fontFamilyInput.value = 'Arial';
+    fontFamilyInput.style.width = '50px';
     textInfoContainer.append(fontFamilyInput);
 
     //-//
@@ -82,6 +84,53 @@ function makeInterface()
         ge('theTextbox').style.fontFamily = fontFamilyInput.value;
     };
     textInfoContainer.append(setFontButton);
+    */
+
+    //-//
+
+    let fontDropdown = ce('select');
+    fontDropdown.id = 'fontDropdown';
+    fontDropdown.style.backgroundColor = 'rgb(0, 0, 0)';
+    fontDropdown.style.color = 'rgb(255, 255, 255)';
+    fontDropdown.style.height = '20px';
+    
+    // Add your font options
+    let fonts = ['Arial', 'Georgia', 'Impact', 'Courier New', 'Times New Roman'];
+
+    for (let i = 0; i < fonts.length; i++)
+    {
+        let option = ce('option');
+        option.value = fonts[i];
+        option.textContent = fonts[i];
+        fontDropdown.append(option);
+    }
+    textInfoContainer.append(fontDropdown);
+
+    //-//
+
+    let setFontSelectionButton = ce('button');
+    setFontSelectionButton.textContent = 'setFontSelection';
+
+    /*
+    // Intercept the mouse press before it can steal focus
+    setFontSelectionButton.onmousedown = function(e)
+    {
+        e.preventDefault(); 
+    };
+
+    setFontSelectionButton.onclick = function()
+    {
+        clickSound();
+        // Because we prevented default on mousedown, the text is still highlighted
+        document.execCommand('fontName', false, fontDropdown.value);
+    };
+    textInfoContainer.append(setFontSelectionButton);
+    */
+
+    ge('fontDropdown').onchange = function()
+    {
+        document.execCommand('fontName', false, fontDropdown.value);
+    };
 
     //-//
 
@@ -191,7 +240,7 @@ function makeInterface()
     theTextbox.style.color = 'white';
     theTextbox.style.outline = 'none';
     theTextbox.style.overFlow = 'scroll';
-    theTextbox.style.fontFamily = fontFamilyInput.value;
+    //theTextbox.style.fontFamily = fontFamilyInput.value;
     theTextbox.onkeyup = function()
     {
         ge('characterCountText').textContent = getCharCount(theTextbox.id) + ' chars';
