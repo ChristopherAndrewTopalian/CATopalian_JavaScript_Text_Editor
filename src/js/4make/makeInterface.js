@@ -27,6 +27,13 @@ function makeInterface()
     characterCountText.textContent = '0 chars';
     textInfoContainer.append(characterCountText);
 
+    let charCountWithSpacesText = ce('div');
+    charCountWithSpacesText.id = 'charCountWithSpacesText';
+    charCountWithSpacesText.className = 'textInfoStyle';
+    charCountWithSpacesText.title = 'Char Count with Spaces';
+    charCountWithSpacesText.textContent = '0 chars';
+    textInfoContainer.append(charCountWithSpacesText);
+
     //-//
 
     let wordCountText = ce('div');
@@ -188,6 +195,8 @@ function makeInterface()
     theTextbox.onkeyup = function()
     {
         ge('characterCountText').textContent = getCharCount(theTextbox.id) + ' chars';
+
+        ge('charCountWithSpacesText').textContent = getCharCountWithSpaces(theTextbox.id) + ' chars';
 
         ge('wordCountText').textContent = getWordCount(theTextbox.id) + ' words';
 
